@@ -1,0 +1,30 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+
+{% block booking %}
+<article class="booking">
+    <div class="booking_wrapper animate__animated animate__fadeIn">
+        <h1 class="booking_title general_title">Личный кабинет</h1>
+        <ul class="bookin_service_price">
+            <li><img width="300px" src="{{ users.photo.url }}"></li>
+            <li><h3>ФИО:{{ users.user.first_name }} {{ users.user.last_name }}</h3></li>
+            <li><h3>Почта:{{ users.user.email }}</h3></li>
+            <li><h3>Логин:{{ users.user.username }}</h3></li>
+        </ul>
+            <h1 class="booking_title general_title">История Записей</h1>
+            <ul class="bookin_service_price">
+                {% for j in events %}
+                <li><h3>Услуга: {{ j.service.work_name }}</h3></li>
+                <li><h3>Цена: {{ j.service.price }}</h3></li>
+                <li><h3>Дата и время: {{ j.date }} {{ j.time }}</h3></li>
+                    <h3>Статус: {% if j.status == True %}</h3>
+                        <h3><span>В ожидание</span></h3>
+                            {% else %}
+                        <h3><span>Пройдено</span></h3>
+                        {% endif %}
+                {% endfor %}
+        </ul>
+    </div>
+</article>
+
+{% endblock %}

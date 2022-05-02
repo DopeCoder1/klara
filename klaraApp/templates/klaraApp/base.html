@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'klaraApp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'klaraApp/styles/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'klaraApp/styles/animate.min.css' %}">
+    <title>Vivienne | {{title}}</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header_site_navigation">
+            <div class="header_wrapper">
+                <nav class="site_navigation">
+                    <ul class="site_nav_list">
+                        <li class="site_nav_links"><a href="{% url 'home' %}"class="header_logo">Vivienne</a></li>
+                        <li class="site_nav_links"><a href="{% url 'about' %}">О нас</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="site_nav_links"><a href="{% url 'booking' %}">Запись</a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated%}
+                        <li class="site_nav_links"><a href="{% url 'profile' %}">Личный кабинет</a></li>
+                        {% endif %}
+                        <li class="site_nav_links"><a href="{% url 'contacts' %}">Контакты</a></li>
+                    {% if not request.user.is_authenticated%}
+                        <li class="site_nav_links"><a href="{% url 'registration' %}"><i class="fa-solid fa-user"></i></a></li>
+                       {% endif %}
+                        {% if request.user.is_authenticated%}
+                                                    <li class="site_nav_links"><a href="{% url 'exit' %}">Выйти|{{ request.user.username }}</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        {% block index %}
+        {% endblock %}
+        {% block about %}
+        {% endblock %}
+        {% block booking %}
+        {% endblock %}
+        {% block contacts %}
+        {% endblock %}
+        {% block registration %}
+        {% endblock %}
+        <footer class="footer_social_networks">
+            <div class="footer_wrapper">
+                <nav class="social_networks_navigation">
+                    <ul class="socialn_nav__list">
+                        <li class="socialn_links"><a href="#"><i class="fa-brands fa-instagram" title="instagram"></i></a></li>
+                        <li class="socialn_links"><a href="#"><i class="fa-brands fa-tiktok" title="tiktok"></i></a></li>
+                        <li class="socialn_links"><a href="#"><i class="fa-brands fa-behance" title="behance"></i></a></li>
+                        <li class="socialn_links"><a href="#"><i class="fa-solid fa-paper-plane" title="telegram"></i></a></li>
+
+                    </ul>
+                </nav>
+                <p class="footer_copyright">Copyright © 2022 . all rights reserved by <span>Vivienne</span></p>
+            </div>
+
+        </footer>
+    </div>
+    {% comment %} <script src="{% static 'klaraApp/scripts/scripts.js'%}"></script> {% endcomment %}
+    <script 
+        async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK0kYJZl8x7b0LFC98pOG2lMV7UygbKec&callback=initMap">
+    </script>
+    
+</body>
+</html>

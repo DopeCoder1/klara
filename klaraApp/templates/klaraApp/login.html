@@ -1,0 +1,21 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+{% block registration %}
+
+<article class="registration">
+    <div class="registration_wrapper animate__animated animate__fadeIn">
+        <div class="ch_form_btns">
+            <a href="{% url 'registration' %}"><button class="ch_form_btn" id="show_sign_up">Регистрация</button></a>
+            <button class="ch_form_btn" id="show_sign_in">Войти</button>
+        </div>
+        <form action="#" method="post" class="login_form sign_up">
+            {% csrf_token %}
+            {{ form3.username }}
+            {{ form3.password }}
+            <input type="submit" value="Вход" class="general_form_btn login_btns">
+        </form>
+    </div>
+</article>
+
+{% endblock %}
+

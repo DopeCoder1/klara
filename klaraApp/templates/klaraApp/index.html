@@ -1,0 +1,73 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+{% block index %}
+
+<article class="index_page">
+    <div class="index_wrapper">
+        <section class="general_intro index_intro">
+            <div class="intro">
+                <h1 class="intro_title general_title">Запись на ноготочки</h1>
+                <p class="intro_text general_text">
+                    Разнообразный и богатый опыт постоянное информационно-техническое обеспечение нашей деятельности влечет за 
+                    собой процесс внедрения и модернизации направлений прогрессивного развития. </p>
+                    <a href="{% url 'booking' %}" class="index_book_btn">Запись</a>
+            </div>
+            <div class="intro_img_block">
+                <img src="{%static 'klaraApp/images/pexels-karolina-grabowska.jpg'%}" alt="Фото автора karolina-grabowska: Pexels" title="Фото автора karolina-grabowska: Pexels" class="intro_pexels_left animate__animated animate__fadeInLeft">
+                <img src="{%static 'klaraApp/images/pexels-davidowaga.jpg'%}" alt="Фото автора davidowaga: Pexels" title="Фото автора davidowaga: Pexels" class="intro_pexels_right animate__animated animate__fadeInRight">
+            </div>
+        </section>
+          
+        <section class="index_quality">
+            <div class="quality_img_block">
+                 <img src="{%static 'klaraApp/images/pexels-cottonbro1.jpg' %}" alt="Фото автора cottonbro: Pexels" title="Фото автора cottonbro: Pexels" class="quality_img_pexels quality_pexels_left">
+                 <img src="{%static 'klaraApp/images/pexels-cottonbro2.jpg' %}" alt="Фото автора cottonbro: Pexels" title="Фото автора cottonbro: Pexels" class="quality_img_pexels quality_pexels_center">
+                 <img src="{%static 'klaraApp/images/pexels-cottonbro3.jpg' %}" alt="Фото автора cottonbro: Pexels" title="Фото автора cottonbro: Pexels" class="quality_img_pexels quality_pexels_right">
+             </div>
+            <div class="quality">
+                 <h2 class="intro_title general_title">О результатах нашей работы</h2>
+                 <p class="intro_text general_text">
+                     Разнообразный и богатый опыт постоянное информационно-техническое обеспечение нашей деятельности влечет за 
+                     собой процесс внедрения и модернизации направлений прогрессивного развития. Повседневная практика показывает, 
+                     что курс на социально-ориентированный национальный проект.
+                 </p>
+            </div>
+        </section>
+              
+        <section class="index_comments">
+            <div class="commnets">
+                <h2 class="comment_title general_title">Отзывы о проделанной работе</h2>
+                <p class="comment_text general_text">
+                    Разнообразный и богатый опыт постоянное информационно-техническое обеспечение нашей деятельности влечет за 
+                    собой процесс внедрения и модернизации направлений прогрессивного развития.
+                </p>
+            </div>
+            <div class="comment_block_cards">
+                <div class="comment_cards">
+                    <img src="{%static 'klaraApp/images/pexels-daniel-xavier.jpg'%}" alt="Фото автора daniel xavier: Pexels" title="Фото автора daniel xavier: Pexels" class="comment_img_pexels comment_pexels_left">
+                    <h4>Daniel Xavier</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, natus recusandae praesentium culpa. </p>
+                </div>
+                <div class="comment_cards">
+                    <img src="{%static 'klaraApp/images/pexels-mentatdgt.jpg'%}" alt="Фото автора mentatdgt: Pexels" title="Фото автора mentatdgt: Pexels" class="comment_img_pexels comment_pexels_center">
+                    <h4>Mentatdgt</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, natus recusandae praesentium.</p>
+                </div>
+                <div class="comment_cards">
+                    <img src="{%static 'klaraApp/images/pexels-andrea-piacquadio.jpg'%}" alt="Фото автора andrea piacquadio: Pexels" title="Фото автора andrea piacquadio: Pexels" class="comment_img_pexels comment_pexels_right">
+                    <h4>Andrea Piacquadio</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, natu</p>
+                </div>
+            </div>
+        </section>
+         
+
+    </div>
+
+</article>
+    
+   
+
+</article>
+
+{% endblock %}

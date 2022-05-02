@@ -1,0 +1,52 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+
+{% block about %}
+<article class="about_us">
+    <div class="about_wrapper">
+        <section class="general_intro about_intro">
+            <div class="intro">
+                <h1 class="intro_title general_title">О нас</h1>
+                <p class="intro_text general_text">
+                    Разнообразный и богатый опыт постоянное информационно-техническое обеспечение нашей деятельности влечет за 
+                    собой процесс внедрения и модернизации направлений прогрессивного развития. Повседневная практика показывает, 
+                    что курс на социально-ориентированный национальный проект требует от нас системного анализа существующих 
+                    финансовых и административных условий?</p>
+            </div>
+            <div class="intro_img_block">
+                <img src="{%static 'klaraApp/images/pexels-karolina-grabowska.jpg'%}" alt="Фото автора karolina-grabowska: Pexels" title="Фото автора karolina-grabowska: Pexels" class="intro_pexels_left animate__animated animate__fadeInLeft">
+                <img src="{%static 'klaraApp/images/pexels-davidowaga.jpg'%}" alt="Фото автора davidowaga: Pexels" title="Фото автора davidowaga: Pexels" class="intro_pexels_right animate__animated animate__fadeInRight">
+            </div>
+        </section>
+        
+    
+       <section class="about_teammates">
+        <h2 class="team_title general_title">Наша команда</h2>
+        <div class="teammates">
+            <div class="about_teammate_intro">
+                <img src="{%static 'klaraApp/images/pexels-pixabay.jpg'%}"  alt="Фото автора pixabay: Pexels" title="Фото автора pixabay: Pexels" class="team_img_pexels">
+                <h4 class="teammate_name">Артем Нигматулин</h4>
+                <h5 class="teammate_post">Менеджер</h5>
+            </div>
+            <div class="about_teammate_intro">
+                <img src="{%static 'klaraApp/images/pexels-andrea-piacquadio2.jpg'%}"  alt="Фото автора andrea-piacquadio: Pexels" title="Фото автора andrea-piacquadio: Pexels" class="team_img_pexels">
+                <h4 class="teammate_name">Анна Жандаркина</h4>
+                <h5 class="teammate_post">Старший маникюрный <br> специалист</h5>
+            </div>
+            <div class="about_teammate_intro">
+                <img src="{%static 'klaraApp/images/pexels-andrea.jpg'%}"  alt="Фото автора andrea-piacquadio: Pexels" title="Фото автора andrea-piacquadio: Pexels" class="team_img_pexels">
+                <h4 class="teammate_name">Милиса Шуьман</h4>
+                <h5 class="teammate_post">Младший маникюрный <br> специалист</h5>
+            </div>
+            <div class="about_teammate_intro">
+                <img src="{%static 'klaraApp/images/pexels-hannah-nelson.jpg'%}"  alt="Фото автора hannah-nelson: Pexels" title="Фото автора hannah-nelson: Pexels" class="team_img_pexels">
+                <h4 class="teammate_name">Наргиз Карчаева</h4>
+                <h5 class="teammate_post">Владалец салона и <br> маникюрный специалист</h5>
+            </div>
+        </div>
+    </section>       
+      
+
+    </div>
+</article>
+{% endblock %}

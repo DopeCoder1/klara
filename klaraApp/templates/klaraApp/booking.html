@@ -1,0 +1,42 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+
+{% block booking %}
+<article class="booking">
+    <div class="booking_wrapper animate__animated animate__fadeIn">
+        <h1 class="booking_title general_title">Таблица записи на услуги</h1>
+        <ul class="bookin_service_price">
+            <li>Маникюр: 6500тг</li>
+            <li>Педикюр: 5500тг</li>
+            <li>Наращиание: 8500тг</li>
+        </ul>
+    </div>
+    <form enctype="multipart/form-data" method="post" action="" >
+        {% csrf_token %}
+        <h3>Занятые места</h3>
+        {% for j in events %}
+            <h3>Дата:{{ j.date }} Время:{{ j.time}} Услуга:{{ j.service.work_name }}</h3>
+        {% endfor %}
+    <h3>Забронировать</h3>
+        {{ form.as_p }}
+    {% if errors %}
+    {{ errors }}
+{% endif %}
+    <button>Забранировать</button>
+    </form>
+</article>
+<script>
+    //появление формы записи на услуги
+    let booking_window = document.querySelector('.book_window');
+    let show_booking_window = document.getElementById('show_booking_window');
+    let hide_booking_window = document.getElementById('hide_booking_window');
+    show_booking_window.addEventListener('click', ()=>{
+        booking_window.classList.add('show_book_window');
+    });
+
+    hide_booking_window.addEventListener('click', ()=>{
+        booking_window.classList.remove('show_book_window');
+    });
+        
+</script>
+{% endblock %}

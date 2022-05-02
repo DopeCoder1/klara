@@ -1,0 +1,50 @@
+{% extends  'klaraApp/base.html'%}
+{% load static %}
+{% block contacts %}
+<article class="contacts"> 
+    <div class="contacts_wrapper animate__animated animate__fadeIn">
+        <div class="contact_info">
+            <div class="contact_info_introduction">
+                <h1 class="contact_info_title">Как нас найти?</h1>
+                <p class="contact_info_text"> Всегда рады вас видеть в нашем салоне красоты Vivienne!
+                    Мы работаем всю неделю с 9:00 до 21:00. 
+                    Для связи с нами по каким либо вопросам, ниже указаны наши контакты. 
+                </p>
+            </div>
+            <ul class="contact_list">
+               <span>
+                    <li><b>почта:</b>  vivienne_nails@gmail.com</li>
+                    <li><b>адрес:</b> улица Сатпаева 22, Алматы 050000</li>
+               </span>
+               <span>
+                    <li><b>телефон 1:</b> 8 (7272) 66 88 25</li>
+                    <li><b>телефон 2:</b> 8 (7272) 92 73 01</li>
+               </span>
+            </ul>
+        </div>
+        <div class="contact_map" id = "map"></div>
+    </div> 
+    
+</article>
+<script>
+    // подключение google maps api
+    let map;
+    
+    function initMap() {    
+        const pos = { lat: 43.237,  lng: 76.931};// ширина и долгота локации (здесь это геолокация сатпаева)
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: pos,
+            zoom: 15,
+        });//подключение самой карты
+
+        //подключение красного маркера
+        const marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+        });
+    }
+</script>
+
+
+{% endblock %}
+
